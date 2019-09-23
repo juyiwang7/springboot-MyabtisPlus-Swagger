@@ -1,0 +1,20 @@
+server:
+  port: 8080 # 访问端口
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  # 连接mysql配置----------------------------------------------------------------------------------
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC  # 本地测试
+    #    url: jdbc:mysql://服务器ip地址:3306/zq_blog?useUnicode=true&characterEncoding=utf-8  # 上线环境
+    username: root
+    password: 123456
+
+# 这里注意如果启动类中加了扫包注解@MapperScan， 这里可不要下面这个配置
+mybatis-plus:  # Mybatis-Plus学习官方文档：https://baomidou.oschina.io/mybatis-plus-doc/#/quick-start
+  mapper-locations: classpath:com/zhengqing/blog/mapper/*Mapper.xml
+  type-aliases-package: com.example.bootMp.entity #别名
+  configuration:
+    map-underscore-to-camel-case: false
