@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -21,6 +22,12 @@ import org.springframework.stereotype.Service;
 public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IBlogService {
     @Autowired
     private IBlogService blogService;
+    @Autowired
+    private BlogMapper blogMapper;
+
+
+
+    @Transactional
     @Override
     public void save() {
         Blog blog = new Blog();
@@ -29,5 +36,10 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
         if (true) {
             throw new RuntimeException("save 抛异常了");
         }
+    }
+
+    @Override
+    public Blog mySelectById(String id) {
+        return blogMapper.mySelectById(id);
     }
 }

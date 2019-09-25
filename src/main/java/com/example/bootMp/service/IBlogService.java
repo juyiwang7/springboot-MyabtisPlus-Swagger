@@ -14,5 +14,7 @@ import com.baomidou.mybatisplus.service.IService;
 public interface IBlogService extends IService<Blog> {
     void save();
 
+    Blog mySelectById(String id);
+
 
 }
