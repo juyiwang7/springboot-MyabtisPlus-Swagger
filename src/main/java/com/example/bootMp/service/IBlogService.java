@@ -12,5 +12,7 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2019-09-23
  */
 public interface IBlogService extends IService<Blog> {
+    void save();
+
 
 }

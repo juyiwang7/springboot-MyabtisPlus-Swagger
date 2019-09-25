@@ -1,5 +1,6 @@
 package com.example.bootMp.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -13,6 +14,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+    @Value("${swagger.title}")String title;
+    @Value("${swagger.desc}")String desc;
+    @Value("${swagger.version}")String version;
+
+
+
+
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -25,10 +33,10 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springboot利用swagger构建api文档")
-                .description("简单优雅的restfun风格，777777777")
+                .title(title)
+                .description("简单优雅的restfun风格，777777777"+desc)
                 .termsOfServiceUrl("http://baidu.com")
-                .version("1.0")
+                .version(version)
                 .build();
     }
 }
