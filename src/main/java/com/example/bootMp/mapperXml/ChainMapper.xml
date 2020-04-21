@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bootMp.mapper.ChainMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.bootMp.entity.Chain">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="user_account" property="user_account" />
+        <result column="description" property="description" />
+        <result column="consensus" property="consensus" />
+        <result column="peers_orgs" property="peers_orgs" />
+        <result column="order_count" property="order_count" />
+        <result column="peer_count" property="peer_count" />
+        <result column="tls_enabled" property="tls_enabled" />
+        <result column="status" property="status" />
+        <result column="created" property="created" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, user_account, description, consensus, peers_orgs, order_count, peer_count, tls_enabled, status, created
+    </sql>
+
+</mapper>

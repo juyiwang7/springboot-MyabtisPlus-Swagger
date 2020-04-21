@@ -34,7 +34,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title(title)
-                .description("简单优雅的restfun风格，777777777"+desc)
+                .description("简单优雅的restful风格，777777777"+desc)
                 .termsOfServiceUrl("http://baidu.com")
                 .version(version)
                 .build();

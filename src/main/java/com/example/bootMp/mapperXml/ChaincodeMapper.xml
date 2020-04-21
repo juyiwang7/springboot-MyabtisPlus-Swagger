@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bootMp.mapper.ChaincodeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.bootMp.entity.Chaincode">
+        <id column="id" property="id" />
+        <result column="chaincode_name" property="chaincode_name" />
+        <result column="channel_id" property="channel_id" />
+        <result column="user_account" property="user_account" />
+        <result column="created" property="created" />
+        <result column="version" property="version" />
+        <result column="status" property="status" />
+        <result column="github_path" property="github_path" />
+        <result column="args" property="args" />
+        <result column="policy" property="policy" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, chaincode_name, channel_id, user_account, created, version, status, github_path, args, policy
+    </sql>
+
+</mapper>
