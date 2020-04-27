@@ -1,99 +1,61 @@
 package com.example.bootMp.entity;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.example.bootMp.common.base.BaseEntity;
+import io.swagger.annotations.ApiModel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import com.baomidou.mybatisplus.enums.IdType;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.activerecord.Model;
-import java.io.Serializable;
 
 /**
- * <p>
- * 用户表
- * </p>
+ * 系统用户
  *
- * @author weisan
- * @since 2020-04-17
+ * @author wwyz
+ * @since 2019-10-04
  */
-public class User extends Model<User> {
-
+@Data
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("sys_user")
+@ApiModel(value = "User对象", description = "系统用户")
+public class User extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
-    private String account;
+    @TableField("username")
+    private String username;
+
+    @TableField("password")
     private String password;
-    private String avatar;
-    private String name;
-    private Long created;
 
+    @TableField("email")
+    private String email;
 
-    public Integer getId() {
-        return id;
-    }
+    @TableField("mobile")
+    private String mobile;
 
-    public User setId(Integer id) {
-        this.id = id;
-        return this;
-    }
+    @TableField("status")
+    private Boolean status;
 
-    public String getAccount() {
-        return account;
-    }
+    @TableField("user_type")
+    private String userType;
 
-    public User setAccount(String account) {
-        this.account = account;
-        return this;
-    }
+    @TableField("realname")
+    private String realname;
 
-    public String getPassword() {
-        return password;
-    }
+    @TableField("sex")
+    private String sex;
 
-    public User setPassword(String password) {
-        this.password = password;
-        return this;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public User setAvatar(String avatar) {
-        this.avatar = avatar;
-        return this;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public User setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public Long getCreated() {
-        return created;
-    }
-
-    public User setCreated(Long created) {
-        this.created = created;
-        return this;
-    }
-
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-        ", id=" + id +
-        ", account=" + account +
-        ", password=" + password +
-        ", avatar=" + avatar +
-        ", name=" + name +
-        ", created=" + created +
-        "}";
+    public static class Fields extends BaseEntity.Fields {
+        public static final String username = "username";
+        public static final String password = "password";
+        public static final String email = "email";
+        public static final String mobile = "mobile";
+        public static final String status = "status";
+        public static final String userType = "user_type";
+        public static final String realname = "realname";
+        public static final String sex = "sex";
     }
 }
