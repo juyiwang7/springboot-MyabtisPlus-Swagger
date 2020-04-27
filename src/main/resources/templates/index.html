@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+
+<body>
+<h1>首页</h1>
+<h2 th:text="${msg}"></h2>
+<form th:action="@{/toLogin}">
+    <button>去登录</button>
+</form>
+</body>
+</html>
