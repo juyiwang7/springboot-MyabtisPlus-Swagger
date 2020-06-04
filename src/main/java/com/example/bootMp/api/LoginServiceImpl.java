@@ -5,6 +5,7 @@ import com.example.bootMp.common.enums.ErrorMessageEnum;
 import com.example.bootMp.common.exception.ApiRuntimeException;
 import com.example.bootMp.entity.User;
 import com.example.bootMp.service.IUserService;
+import com.example.bootMp.utils.CookieTool;
 import com.example.bootMp.utils.PasswordHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,7 @@ public class LoginServiceImpl implements LoginService {
         resultMap.put("token", token);
         resultMap.put("username", username);
         resultMap.put("usertype", user.getUserType());
+        CookieTool.setCookies(response,"token",token);
         return resultMap;
     }
 

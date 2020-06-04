@@ -2,6 +2,7 @@ package com.example.bootMp.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Usage:
@@ -28,5 +29,11 @@ public class CookieTool {
         }
 
         return null;
+    }
+
+    public static void setCookies(HttpServletResponse response, String key, String value) {
+        Cookie myCookie=new Cookie(key,value);
+        myCookie.setMaxAge(60*60*24);
+        response.addCookie(myCookie);
     }
 }
