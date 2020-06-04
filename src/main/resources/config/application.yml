@@ -1,5 +1,5 @@
 server:
-  port: 8080 # 访问端口
+  port: 7775 # 访问端口
   tomcat:
     uri-encoding: utf-8
 
