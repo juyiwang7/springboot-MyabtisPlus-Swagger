@@ -18,6 +18,12 @@
 		<java.version>1.8</java.version>
 		<jjwt.version>0.10.5</jjwt.version>
 	</properties>
+	<repositories>
+		<repository>
+			<id>com.e-iceblue</id>
+			<url>http://repo.e-iceblue.cn/repository/maven-public/</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -145,7 +151,38 @@
 			<version>${jjwt.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.docker-java</groupId>
+			<artifactId>docker-java</artifactId>
+			<!-- use latest version https://github.com/docker-java/docker-java/releases -->
+			<version>3.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox-tools</artifactId>
+			<version>2.0.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId> e-iceblue </groupId>
+			<artifactId>spire.pdf</artifactId>
+			<version>3.4.2</version>
+		</dependency>
 
 	</dependencies>
 

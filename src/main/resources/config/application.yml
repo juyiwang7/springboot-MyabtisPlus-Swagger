@@ -1,14 +1,17 @@
-server:
-  port: 7775 # 访问端口
-  tomcat:
-    uri-encoding: utf-8
+# 先读取properties格式的配置文件，后读取yml格式的配置文件。读取到的配置以第一次的为准。
+#server:
+#  port: 7775 # 访问端口
+#  tomcat:
+ #   uri-encoding: utf-8
 
-swagger:
-  title: "springboot-MyabtisPlus-Swagger"
-  desc: "springboot的配置与整合学习"
-  version: "1.0"
+#swagger:
+#  title: "springboot-MyabtisPlus-Swagger"
+ # desc: "springboot的配置与整合学习"
+ # version: "1.0"
 
 spring:
+  profiles:
+    active: prod
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -50,3 +53,18 @@ logging:
     com.example.bootMp.mapper: debug   #设置mapper.java包为debug输出
   file: c:/tmp/xxx-xxx-web/log.log
   file.max-history: 30
+
+user-redis:
+  keyPrefix: mayuan
+  #host: r-bp1lckcyzcr8tmd84q.redis.rds.aliyuncs.com
+  host: r-bp1lckcyzcr8tmd84qpd.redis.rds.aliyuncs.com
+  port: 6379
+  timeout: 20000
+  password: Yjys6111
+  database: 11
+  pool:
+    max-active: 50
+    max-wait: 300
+    max-idle: 20
+    min-idle: 8
+

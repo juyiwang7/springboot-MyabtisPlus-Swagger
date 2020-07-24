@@ -1,0 +1,10 @@
+# 先读取properties格式的配置文件，后读取yml格式的配置文件。读取到的配置以第一次的为准。
+server:
+  port: 7775 # 访问端口
+  tomcat:
+    uri-encoding: utf-8
+
+swagger:
+  title: "测试环境swagger"
+  desc: "测试dev环境的"
+  version: "2.0"

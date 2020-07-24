@@ -1,11 +1,14 @@
 package com.example.bootMp.entity;
 
-import com.baomidou.mybatisplus.enums.IdType;
-import java.util.Date;
-import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
+
+import java.io.FileInputStream;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.Properties;
 
 /**
  * <p>
@@ -159,4 +162,13 @@ public class Blog extends Model<Blog> {
         ", keyWord=" + keyWord +
         "}";
     }
+
+    public static void main(String[] args) throws Exception{
+        Properties properties = new Properties();
+        FileInputStream fis = new FileInputStream("jdbc.properties");
+        properties.load(fis);
+        String name = properties.getProperty("name");
+        System.out.println(name);
+    }
+
 }
