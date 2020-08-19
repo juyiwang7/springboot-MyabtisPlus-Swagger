@@ -8,3 +8,9 @@ swagger:
   title: "正式环境swagger"
   desc: "测试prod环境的"
   version: "3.0"
+
+
+aliyun:
+  sms:
+    accessKeyId: LTAI4GFpUPL7J9XroGu3FxTu
+    accessSecret: cEqroPdDJjl6L3JWxcZKZmwd8SKn2p

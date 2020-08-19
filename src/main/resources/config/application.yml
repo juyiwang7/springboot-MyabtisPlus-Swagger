@@ -57,14 +57,14 @@ logging:
 user-redis:
   keyPrefix: mayuan
   #host: r-bp1lckcyzcr8tmd84q.redis.rds.aliyuncs.com
-  host: r-bp1lckcyzcr8tmd84qpd.redis.rds.aliyuncs.com
+  host: 10.1.21.152
   port: 6379
   timeout: 20000
   password: Yjys6111
-  database: 11
+  database: 10
   pool:
     max-active: 50
-    max-wait: 300
+    max-wait: 100
     max-idle: 20
     min-idle: 8
 

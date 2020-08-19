@@ -157,11 +157,11 @@
 			<!-- use latest version https://github.com/docker-java/docker-java/releases -->
 			<version>3.1.5</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.4</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
@@ -182,6 +182,17 @@
 			<groupId> e-iceblue </groupId>
 			<artifactId>spire.pdf</artifactId>
 			<version>3.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.kubernetes</groupId>
+			<artifactId>client-java</artifactId>
+			<version>9.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-core</artifactId>
+			<version>4.5.1</version>
 		</dependency>
 
 	</dependencies>

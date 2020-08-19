@@ -5,21 +5,12 @@ import com.example.bootMp.annotation.Auth;
 import com.example.bootMp.entity.User;
 import com.spire.pdf.FileFormat;
 import com.spire.pdf.PdfDocument;
-import io.swagger.annotations.ApiOperation;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.annotation.Resource;
-import java.util.Random;
-import java.util.Set;
 
 @Controller
 public class IndexController {
-    @Resource(name = "userRedisKeyDatabase")
-    private RedisTemplate<String, Object> redisTemplate;
     @RequestMapping("/index")
     public String index(Model model){
         model.addAttribute("msg","后台返回消息");
@@ -40,22 +31,7 @@ public class IndexController {
         return "home";
     }
 
-    /**
-     * 移除redis中存储的已占用端口
-     * @param port
-     */
-    @ApiOperation("移除redis中存储的已占用端口")
-    @GetMapping("/removeUsedPort")
-    public void removeUsedPort(Integer port){
-        Set portUsed = (Set) redisTemplate.opsForValue().get("portUsed");
-        Random random = new Random();
-        if (portUsed == null || portUsed.size() == 0){
-            return;
-        }else {
-            portUsed.remove(port);
-        }
-        redisTemplate.opsForValue().set("portUsed",portUsed);
-    }
+
 
     public static void main(String[] args) {
         //加载测试文档
